@@ -14,18 +14,11 @@ export const setupServer = () => {
   app.use(express.json());
   app.use(cors());
 
-  app.use(
-    pino({
-      transport: {
-        target: 'pino-pretty',
-      },
-    }),
-  );
+  // pino-pretty transport kaldırıldı
+  app.use(pino());
 
-  
   app.use('/contacts', contactsRouter);
 
-  
   app.use(notFoundHandler);
   app.use(errorHandler);
 
