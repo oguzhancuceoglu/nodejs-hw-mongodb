@@ -27,4 +27,4 @@ router.post('/logout', ctrlWrapper(logoutUserController));
 
 router.post('/refresh', ctrlWrapper(refreshUserSessionController));
 
-export const routerAuth = router;
+export default router;
